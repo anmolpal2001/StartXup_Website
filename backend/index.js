@@ -4,13 +4,15 @@ const cors = require('cors');
 // const fs = require('fs');
 const fs = require('fs').promises;
 
+const baseUrl = "https://startxup-website-api.onrender.com"
+
 require('dotenv').config();
 const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cors());
 
-app.get('/api/startups', async (req, res) => {
+app.get(`${baseUrl}/api/startups`, async (req, res) => {
     try {
         const rawData = await fs.readFile('./newData.json', 'utf-8');
         const jsonData = JSON.parse(rawData || '[]');
@@ -21,7 +23,7 @@ app.get('/api/startups', async (req, res) => {
     }
 });
 
-app.post('/api/startups', async (req, res) => {
+app.post(`${baseUrl}/api/startups`, async (req, res) => {
     try {
         const formData = req.body;
 
