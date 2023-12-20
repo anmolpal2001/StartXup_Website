@@ -116,6 +116,11 @@ const NewNavbar = ({ handleFilterChange }) => {
           "Finance",
           "Logistics",
           "Food & Beverage",
+          "ECommerce",
+          "Education",
+          "Real Estate",
+          "Food Delivery Platform",
+          "Mobile Fitness App",
         ]}
         selectedOption={selectedFilter}
         onChange={handleFilterChangeInternal}

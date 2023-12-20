@@ -25,6 +25,11 @@ const FilterSection = ({ onFilterChange }) => {
               <option value="Finance">Finance</option>
               <option value="Logistics">Logistics</option>
               <option value="Food & Beverage">Food & Beverage</option>
+              <option value="ECommerce">ECommerce</option>
+              <option value="Education">Education</option>
+              <option value="Real Estate">Real Estate</option>
+              <option value="Food Delivery Platform">Food Delivery Platform</option>
+              <option value="Mobile Fitness App">Mobile Fitness App</option>
             </select>
           </div>
         </div>
