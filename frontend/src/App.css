@@ -1,0 +1,21 @@
+
+body {
+    background-color: #2C2B30;
+    overflow: scroll;
+}
+
+header{
+    z-index: 1000 !important;
+}
+
+
+.heroSection{
+    background-image: url('./assets/Bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 80px;
+    width: 100%;
+}
+.btn-primary{
+    @apply px-7 py-2 bg-blueColor text-white rounded hover:bg-lightBlue transition-all duration-300 hover:-translate-y-4;
+  }
