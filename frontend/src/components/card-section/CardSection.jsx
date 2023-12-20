@@ -59,13 +59,13 @@ const CardSection = ({ cardDetails: initialCardDetails, loading, error }) => {
         ))}
       </div>
       <div className='flex justify-center mt-16'>
-        <button className="bg-lightGreyish hover:bg-blueColor hover:text-white px-4 py-1 rounded-lg text-xl font-medium" onClick={handlePrevPage} style={{ cursor: currentPage === 1 ? 'not-allowed' : 'pointer', opacity: currentPage === 1 ? 0.5 : 1 }} disabled={currentPage === 1}>
+        <button className="bg-lightGreyish hover:bg-blueColor hover:text-white px-4 py-2 rounded-lg text-lg md:text-xl font-medium" onClick={handlePrevPage} style={{ cursor: currentPage === 1 ? 'not-allowed' : 'pointer', opacity: currentPage === 1 ? 0.5 : 1 }} disabled={currentPage === 1}>
           Prev
         </button>
-        <span className='mx-4 text-white text-xl px-12 py-1'>
+        <span className='mx-4 text-white md:text-xl text-sm md:px-12 px-6 py-2'>
           Page {currentPage} of {totalPages}
         </span>
-        <button onClick={handleNextPage} className="bg-lightGreyish hover:bg-blueColor hover:text-white px-4 py-1 rounded-lg text-xl font-medium" style={{ cursor: currentPage === totalPages ? 'not-allowed' : 'pointer', opacity: currentPage === 1 ? 0.5 : 1 }} disabled={currentPage === totalPages}>
+        <button onClick={handleNextPage} className="bg-lightGreyish hover:bg-blueColor hover:text-white px-4 md:py-1 rounded-lg text-lg md:text-xl font-medium" style={{ cursor: currentPage === totalPages ? 'not-allowed' : 'pointer', opacity: currentPage === 1 ? 0.5 : 1 }} disabled={currentPage === totalPages}>
           Next
         </button>
       </div>
