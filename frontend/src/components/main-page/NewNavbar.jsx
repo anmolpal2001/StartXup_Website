@@ -10,7 +10,6 @@ const NewNavbar = ({ handleFilterChange }) => {
   const navigate = useNavigate();
   const [selectedFilter, setSelectedFilter] = useState("All-Category");
 
-  // set toggle Menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -22,7 +21,7 @@ const NewNavbar = ({ handleFilterChange }) => {
   const handleDropdownClick = () => {
     if (window.innerWidth <= 768) {
       navigate("/");
-      toggleMenu(); // Close the menu after redirecting
+      toggleMenu();
     }
   };
   useEffect(() => {
@@ -34,7 +33,6 @@ const NewNavbar = ({ handleFilterChange }) => {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    // handleDropdownClick()
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -42,7 +40,7 @@ const NewNavbar = ({ handleFilterChange }) => {
 
   const handleFilterChangeInternal = (value) => {
     setSelectedFilter(value);
-    handleFilterChange(value); // Call the prop function to update the filter in Main component
+    handleFilterChange(value);
   };
 
 
@@ -50,7 +48,6 @@ const NewNavbar = ({ handleFilterChange }) => {
 
   return (
     <header className="w-full bg-backgroundColor md:bg-transparent fixed top-0 left-0 right-0">
-      {/* <nav className="relative px-4 lg:px-14 py-3 max-w-screen-2xl mx-auto"> */}
       <nav
         className={`py-4 lg:px-14 px-4 ${
           isSticky
@@ -94,19 +91,6 @@ const NewNavbar = ({ handleFilterChange }) => {
             isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"
           }`}
         >
-          {/* {navItems.map(({ link, path }) => (
-            <Link
-              onClick={toggleMenu}
-              to={path}
-              
-              smooth={true}
-              offset={-100}
-              key={path}
-              className="block text-base text-white hover:text-white first:font-medium"
-            >
-              {link}
-            </Link>
-          ))} */}
           
           <Dropdown
         options={[
