@@ -40,7 +40,7 @@ const ProjectForm = () => {
   
     try {
       const formattedDate = formatDate(formData.Date);
-      const response = await fetch('http://localhost:3000/api/startups', {
+      const response = await fetch('https://startxup-website-api.onrender.com/api/startups', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
