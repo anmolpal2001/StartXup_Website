@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
-app.get(`${baseUrl}/api/startups`, async (req, res) => {
+app.get(`/api/startups`, async (req, res) => {
     try {
         const rawData = await fs.readFile('./newData.json', 'utf-8');
         const jsonData = JSON.parse(rawData || '[]');
@@ -23,7 +23,7 @@ app.get(`${baseUrl}/api/startups`, async (req, res) => {
     }
 });
 
-app.post(`${baseUrl}/api/startups`, async (req, res) => {
+app.post(`/api/startups`, async (req, res) => {
     try {
         const formData = req.body;
 

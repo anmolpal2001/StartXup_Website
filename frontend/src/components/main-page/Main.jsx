@@ -14,12 +14,13 @@ const Main = () => {
 
   const fetchCardDetails = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/startups");
+      const response = await fetch("https://startxup-website-api.onrender.com/api/startups");
       const data = await response.json();
       setCardDetails(data);
       setOriginalCardDetails(data);
       setLoading(false);
     } catch (error) {
+      console.log(error);
       setError(true);
       setLoading(false);
     }
