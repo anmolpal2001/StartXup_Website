@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.get(`/api/startups`, async (req, res) => {
     try {
-        const rawData = await fs.readFile('./newData.json', 'utf-8');
+        const rawData = await fs.readFile('./startup.json', 'utf-8');
         const jsonData = JSON.parse(rawData || '[]');
         res.json(jsonData);
     } catch (error) {
@@ -27,7 +27,7 @@ app.post(`/api/startups`, async (req, res) => {
     try {
         const formData = req.body;
 
-        const rawData = await fs.readFile('./newData.json', 'utf-8');
+        const rawData = await fs.readFile('./startup.json', 'utf-8');
         const jsonData = JSON.parse(rawData || '[]');
 
         const lastRecord = jsonData.length > 0 ? jsonData[jsonData.length - 1] : null;
@@ -36,7 +36,7 @@ app.post(`/api/startups`, async (req, res) => {
         const newData = { SNo: nextSNo,...formData };
         jsonData.push(newData);
 
-        await fs.writeFile('./newData.json', JSON.stringify(jsonData, null, 2), 'utf-8');
+        await fs.writeFile('./startup.json', JSON.stringify(jsonData, null, 2), 'utf-8');
 
         res.status(201).json({ success: true, message: 'Form data added successfully' });
     } catch (error) {
